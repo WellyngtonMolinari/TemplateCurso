@@ -1,11 +1,17 @@
+/* Estilos Gerais */
 body {
     font-family: Arial, sans-serif;
-    margin: 20px;
+    margin: 0;
+    padding: 0;
     line-height: 1.6;
     background-color: #f5f5f5;
     color: #333;
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
 }
 
+/* Cabeçalhos */
 h1 {
     color: #2c3e50;
     text-align: center;
@@ -17,6 +23,7 @@ h2, h3 {
     margin-top: 20px;
 }
 
+/* Listas */
 ul {
     margin: 10px 0;
     padding-left: 20px;
@@ -36,28 +43,17 @@ ul ul {
     list-style-type: disc;
 }
 
-/* Responsividade */
-@media (max-width: 600px) {
-    body {
-        margin: 10px;
-    }
-    ul {
-        padding-left: 15px;
-    }
-    ul ul {
-        padding-left: 15px;
-        margin-left: 10px;
-    }
-}
-
-/* Estilo de contêiner */
+/* Estilo de Contêiner Principal */
 .container {
-    max-width: 800px;
-    margin: 0 auto;
+    flex: 1;
+    max-width: 1000px;
+    margin: 20px auto;
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    transition: margin-left 0.3s, max-width 0.3s;
+    margin-left: 300px; /* Aumentar margem para o conteúdo */
 }
 
 /* Links */
@@ -70,7 +66,7 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Estilo para imagens */
+/* Estilo para Imagens */
 .image-container {
     text-align: center;
     margin: 20px 0;
@@ -81,4 +77,140 @@ a:hover {
     height: auto;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Estilo da Sidebar */
+.sidebar {
+    width: 250px;
+    background-color: #f8f9fa;
+    padding: 15px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    position: fixed;
+    height: 100%;
+    overflow-y: auto;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: transform 0.3s ease, width 0.3s ease;
+}
+
+/* Títulos na Sidebar */
+.sidebar h3 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Links na Sidebar */
+.sidebar a {
+    display: block;
+    color: #2c3e50;
+    text-decoration: none;
+    padding: 10px 0;
+    border-bottom: 1px solid #e0e0e0;
+    transition: background 0.3s, color 0.3s;
+}
+
+.sidebar a:hover {
+    background-color: #e0e0e0;
+    color: #2980b9;
+}
+
+/* Estilo do Botão de Toggle (Menu) */
+.toggle-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background-color: #2980b9;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    z-index: 1100;
+    transition: background 0.3s;
+    display: none; /* Inicialmente escondido */
+}
+
+.toggle-btn:hover {
+    background-color: #216f94;
+}
+
+/* Estilo do Botão de Esconder a Sidebar ("<") */
+.hide-sidebar-btn {
+    background-color: #2980b9;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    z-index: 1100;
+    transition: background 0.3s;
+    margin-left: 10px; /* Espaço à esquerda do título */
+}
+
+.hide-sidebar-btn:hover {
+    background-color: #216f94;
+}
+
+/* Responsividade */
+@media (max-width: 1000px) {
+    .container {
+        margin-left: 0;
+        max-width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        box-shadow: none;
+        padding: 10px;
+        transform: translateX(-100%);
+    }
+
+    .toggle-btn {
+        left: 10px;
+        top: 10px;
+        display: block; /* Mostrar botão de toggle em telas menores */
+    }
+
+    /* Mostrar sidebar quando visível */
+    .sidebar.hidden {
+        display: none; /* Oculta completamente a sidebar quando escondida */
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        flex-direction: column;
+    }
+
+    ul {
+        padding-left: 15px;
+    }
+
+    ul ul {
+        padding-left: 15px;
+        margin-left: 10px;
+    }
+
+    .container {
+        margin-top: 10px;
+        padding: 10px;
+    }
+}
+
+/* Estado da Sidebar Oculta */
+.sidebar.hidden {
+    transform: translateX(-100%);
+}
+
+.container.full-width {
+    margin-left: 0;
+    max-width: 100%;
 }
