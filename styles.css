@@ -118,6 +118,12 @@ a:hover {
     color: #2980b9;
 }
 
+/* Link ativo na Sidebar */
+.sidebar a.active {
+    background-color: #2980b9; /* Cor de fundo para o link ativo */
+    color: #fff; /* Cor do texto para o link ativo */
+}
+
 /* Estilo do Botão de Toggle (Menu) */
 .toggle-btn {
     position: fixed;
@@ -155,7 +161,6 @@ a:hover {
 .hide-sidebar-btn:hover {
     background-color: #216f94;
 }
-
 
 /* Responsividade */
 @media (max-width: 1000px) {
