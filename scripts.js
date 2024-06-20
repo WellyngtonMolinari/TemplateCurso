@@ -1,30 +1,41 @@
-document.getElementById('toggle-sidebar').addEventListener('click', function() {
-    var sidebar = document.getElementById('sidebar');
-    var container = document.getElementById('main-content');
-    
-    sidebar.classList.toggle('hidden');
-    container.classList.toggle('full-width');
+document.addEventListener("DOMContentLoaded", function() {
+    const toggleBtn = document.getElementById('toggle-sidebar');
+    const sidebar = document.getElementById('sidebar');
+    const container = document.getElementById('main-content');
+    const hideSidebarBtn = document.getElementById('hide-sidebar');
 
-    // Mostrar o botão de toggle "Menu" apenas quando a sidebar estiver escondida
-    if (sidebar.classList.contains('hidden')) {
-        this.style.display = 'block';
-    } else {
-        this.style.display = 'none';
-    }
-});
+    toggleBtn.addEventListener('click', function() {
+        sidebar.classList.toggle('active');
+        sidebar.classList.toggle('hidden');
+        container.classList.toggle('full-width');
+        
+        // Alternar a visibilidade do botão de toggle "Menu"
+        if (sidebar.classList.contains('active')) {
+            toggleBtn.style.display = 'none'; // Esconde o botão "Menu" quando a sidebar está visível
+        } else {
+            toggleBtn.style.display = 'block'; // Mostra o botão "Menu" quando a sidebar está escondida
+        }
+    });
 
-document.getElementById('hide-sidebar').addEventListener('click', function() {
-    var sidebar = document.getElementById('sidebar');
-    var container = document.getElementById('main-content');
-    var toggleBtn = document.getElementById('toggle-sidebar');
-    
-    sidebar.classList.toggle('hidden');
-    container.classList.toggle('full-width');
-    
-    // Alternar visibilidade dos botões
-    if (sidebar.classList.contains('hidden')) {
+    hideSidebarBtn.addEventListener('click', function() {
+        sidebar.classList.remove('active');
+        sidebar.classList.add('hidden');
+        container.classList.toggle('full-width');
+        
+        // Mostrar o botão "Menu" quando a sidebar está escondida
         toggleBtn.style.display = 'block';
-    } else {
-        toggleBtn.style.display = 'none';
-    }
+    });
+    
+    // Adicionar evento de clique em links da sidebar para esconder a sidebar ao clicar
+    const sidebarLinks = sidebar.querySelectorAll('a');
+    sidebarLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            if (window.innerWidth <= 1000) { // Apenas para dispositivos móveis
+                sidebar.classList.remove('active');
+                sidebar.classList.add('hidden');
+                toggleBtn.style.display = 'block';
+                container.classList.add('full-width');
+            }
+        });
+    });
 });

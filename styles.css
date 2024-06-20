@@ -131,7 +131,7 @@ a:hover {
     border-radius: 5px;
     z-index: 1100;
     transition: background 0.3s;
-    display: none; /* Inicialmente escondido */
+    display: none; /* Inicialmente escondido no desktop */
 }
 
 .toggle-btn:hover {
@@ -148,12 +148,14 @@ a:hover {
     border-radius: 5px;
     z-index: 1100;
     transition: background 0.3s;
-    margin-left: 10px; /* Espaço à esquerda do título */
+    position: relative; /* Posicionamento absoluto para controle preciso */
+    left: -20px; /* Movendo o botão para dentro da sidebar */
 }
 
 .hide-sidebar-btn:hover {
     background-color: #216f94;
 }
+
 
 /* Responsividade */
 @media (max-width: 1000px) {
@@ -167,10 +169,11 @@ a:hover {
     .sidebar {
         width: 100%;
         height: auto;
-        position: relative;
-        box-shadow: none;
-        padding: 10px;
-        transform: translateX(-100%);
+        position: fixed;
+        left: -100%; /* Esconde a sidebar fora da tela */
+        top: 0;
+        z-index: 1200;
+        transition: left 0.3s ease; /* Animação para deslizamento da sidebar */
     }
 
     .toggle-btn {
@@ -179,9 +182,13 @@ a:hover {
         display: block; /* Mostrar botão de toggle em telas menores */
     }
 
-    /* Mostrar sidebar quando visível */
+    .sidebar.active {
+        left: 0; /* Traz a sidebar para dentro da tela quando ativa */
+    }
+
+    /* Esconde a sidebar quando não ativa */
     .sidebar.hidden {
-        display: none; /* Oculta completamente a sidebar quando escondida */
+        left: -100%; /* Move a sidebar para fora da tela à esquerda */
     }
 }
 
