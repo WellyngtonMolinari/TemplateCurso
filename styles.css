@@ -110,7 +110,8 @@ a:hover {
     text-decoration: none;
     padding: 10px 0;
     border-bottom: 1px solid #e0e0e0;
-    transition: background 0.3s, color 0.3s;
+    transition: background .8s, color 0.3s;
+    border-radius: 10px; /* Deixar o link com cantos arredondados */
 }
 
 .sidebar a:hover {
@@ -122,6 +123,9 @@ a:hover {
 .sidebar a.active {
     background-color: #2980b9; /* Cor de fundo para o link ativo */
     color: #fff; /* Cor do texto para o link ativo */
+    border-radius: 10px; /* Deixar o link com cantos arredondados */
+    padding: 5px 10px; /* Adicionar espaçamento ao redor do link */
+    margin: 5px 0; /* Espaçamento entre os links */
 }
 
 /* Estilo do Botão de Toggle (Menu) */
@@ -165,37 +169,21 @@ a:hover {
 /* Responsividade */
 @media (max-width: 1000px) {
     .container {
-        margin-left: 0;
-        max-width: 100%;
+        margin-left: 20px; /* Ajuste dinâmico da margem esquerda */
+        max-width: calc(100% - 40px); /* Reduz a largura máxima considerando margens */
         padding-left: 20px;
         padding-right: 20px;
     }
 
     .sidebar {
-        width: 100%;
-        height: auto;
-        position: fixed;
-        left: -100%; /* Esconde a sidebar fora da tela */
-        top: 0;
-        z-index: 1200;
-        transition: left 0.3s ease; /* Animação para deslizamento da sidebar */
+        width: 250px; /* Largura original da sidebar */
     }
 
     .toggle-btn {
-        left: 10px;
-        top: 10px;
-        display: block; /* Mostrar botão de toggle em telas menores */
-    }
-
-    .sidebar.active {
-        left: 0; /* Traz a sidebar para dentro da tela quando ativa */
-    }
-
-    /* Esconde a sidebar quando não ativa */
-    .sidebar.hidden {
-        left: -100%; /* Move a sidebar para fora da tela à esquerda */
+        z-index: 1200; /* Aumenta o z-index para que o botão fique acima da sidebar */
     }
 }
+
 
 @media (max-width: 600px) {
     body {
