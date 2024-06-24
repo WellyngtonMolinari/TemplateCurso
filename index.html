@@ -21,14 +21,8 @@
         <a href="#mod-modificacoes">3. Fazer Modificações</a>
         <a href="#mod-testar">4. Testar o Mod</a>
         <h3>Páginas Relacionadas</h3>
-        <a href="cpu.html">CPU</a>
-        <a href="ram.html">Memória RAM</a>
-        <a href="hdd.html">HDD</a>
-        <a href="ssd.html">SSD</a>
-        <a href="motherboard.html">Placa-Mãe</a>
-        <a href="gpu.html">Placa de Vídeo</a>
-        <a href="psu.html">Fonte de Alimentação</a>
-        <a href="cooling.html">Dispositivos de Resfriamento</a>
+        <a href="extras.html">Extras</a>
+        <a href="extras2.html">Extras2</a>
     </div>
 
     <!-- Conteúdo Principal -->
@@ -41,7 +35,7 @@
         </div>
 
         <h2 id="mod-intro">1. Introdução ao Mod</h2>
-        <p>Neste guia, vamos aprender como criar um mod para o jogo <strong>King Arthur's Gold</strong>, chamado <em>"Cavaleiro Sanguinário"</em>. Este mod ajustará os tempos de ataque da classe cavaleiro, tornando-a mais ágil e feroz.</p>
+        <p>Neste guia, vamos aprender como criar um mod básico para o jogo <strong>King Arthur's Gold</strong>, chamado <em>"Cavaleiro Sanguinário"</em>. Este mod ajustará os tempos de ataque da classe cavaleiro, tornando-a mais ágil e feroz.</p>
 
         <h2 id="mod-localizacao">2. Localizar Arquivos do Jogo</h2>
         <p>O primeiro passo é localizar os arquivos responsáveis pela lógica do cavaleiro no jogo:</p>
@@ -49,13 +43,14 @@
             <li>Abra a pasta de instalação do <strong>King Arthur's Gold</strong>.</li>
             <li>Navegue até a pasta onde estão os scripts do jogo.</li>
             <li>Encontre o arquivo específico que controla os scripts da classe cavaleiro, geralmente nomeado algo como <code>knight.as</code>.</li>
-            <li>Anote o endereço completo da pasta e o nome do arquivo.</li>
+            <li>Anote o endereço completo da pasta e o copie o arquivo completo.</li>
         </ul>
 
         <h2 id="mod-modificacoes">3. Fazer Modificações</h2>
         <p>Agora que sabemos onde estão os arquivos, vamos começar a fazer as modificações necessárias:</p>
         <ul>
-            <li>Crie uma nova pasta para o mod, nomeie-a como <code>Knight+</code>.</li>
+            <li>Volte à pasta raiz do jogo.</li>
+            <li>Crie uma nova pasta para o seu mod dentro da pasta "Mods", nomeie-a como <code>CavaleiroSanguinario</code>.</li>
             <li>Copie o arquivo <code>knight.as</code> para a pasta do mod, mantendo o mesmo nome e estrutura de diretório.</li>
             <li>Abra o arquivo copiado e estude a lógica do script.</li>
             <li>Procure pela variável que controla o tempo entre os ataques do cavaleiro e faça as modificações desejadas para ajustá-la.</li>
@@ -67,7 +62,7 @@
         <ul>
             <li>Volte à pasta raiz do jogo.</li>
             <li>Encontre o arquivo <code>mods.cfg</code>.</li>
-            <li>Adicione o nome da pasta do mod <code>Knight+</code> na primeira linha deste arquivo.</li>
+            <li>Adicione o nome da pasta do mod <code>CavaleiroSanguinario</code> na primeira linha deste arquivo e salve-o.</li>
             <li>Execute o jogo usando o arquivo <code>runlocalhost</code> para iniciar com o mod carregado.</li>
             <li>Teste o jogo e observe as mudanças no comportamento do cavaleiro.</li>
         </ul>
