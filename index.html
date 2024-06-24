@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>O que é um Computador?</title>
+    <title>Como Criar Mods para King Arthur's Gold</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -16,13 +16,10 @@
             Conteúdo da Página
             <button class="hide-sidebar-btn" id="hide-sidebar">&lt;</button>
         </h3>
-        <a href="#definicao">1. Definição de Computador</a>
-        <a href="#componentes">2. Componentes Principais</a>
-        <a href="#tipos">3. Tipos de Computadores</a>
-        <a href="#funcoes">4. Funções de um Computador</a>
-        <a href="#historia">5. História dos Computadores</a>
-        <a href="#impacto">6. Impacto na Sociedade</a>
-        <a href="#futuro">7. Futuro dos Computadores</a>
+        <a href="#mod-intro">1. Introdução ao Mod</a>
+        <a href="#mod-localizacao">2. Localizar Arquivos do Jogo</a>
+        <a href="#mod-modificacoes">3. Fazer Modificações</a>
+        <a href="#mod-testar">4. Testar o Mod</a>
         <h3>Páginas Relacionadas</h3>
         <a href="cpu.html">CPU</a>
         <a href="ram.html">Memória RAM</a>
@@ -36,62 +33,44 @@
 
     <!-- Conteúdo Principal -->
     <div class="container" id="main-content">
-        <h1>O que é um Computador??</h1>
+        <h1>Guia de Criação de Mods para King Arthur's Gold</h1>
 
         <!-- Espaço para a imagem -->
         <div class="image-container">
-            <img src="imagens/computer.jpg" alt="Imagem de um Computador">
+            <img src="imagens/king-arthurs-gold.jpg" alt="Imagem de King Arthur's Gold">
         </div>
 
-        <h2 id="definicao">1. Definição de Computador</h2>
-        <p>Um computador é um dispositivo eletrônico capaz de receber, processar e armazenar dados. Ele executa uma sequência de operações predefinidas, conhecidas como programas ou software, para realizar tarefas específicas. Os computadores são fundamentais em quase todos os aspectos da vida moderna, desde a comunicação e o trabalho até o entretenimento e a educação.</p>
+        <h2 id="mod-intro">1. Introdução ao Mod</h2>
+        <p>Neste guia, vamos aprender como criar um mod para o jogo <strong>King Arthur's Gold</strong>, chamado <em>"Cavaleiro Sanguinário"</em>. Este mod ajustará os tempos de ataque da classe cavaleiro, tornando-a mais ágil e feroz.</p>
 
-        <h2 id="componentes">2. Componentes Principais de um Computador</h2>
-        <p>Os computadores são compostos por vários componentes principais, cada um desempenhando um papel crucial no seu funcionamento:</p>
+        <h2 id="mod-localizacao">2. Localizar Arquivos do Jogo</h2>
+        <p>O primeiro passo é localizar os arquivos responsáveis pela lógica do cavaleiro no jogo:</p>
         <ul>
-            <li><a href="cpu.html"><strong>CPU (Unidade Central de Processamento):</strong></a> O cérebro do computador, que executa instruções e processa dados.</li>
-            <li><a href="ram.html"><strong>Memória RAM (Memória de Acesso Aleatório):</strong></a> Armazena temporariamente dados e programas em uso para acesso rápido.</li>
-            <li><a href="storage.html"><strong>Dispositivos de Armazenamento:</strong></a> Como HDDs e SSDs, que armazenam dados e programas permanentemente.</li>
-            <li><a href="motherboard.html"><strong>Placa-Mãe:</strong></a> A principal placa de circuito que conecta todos os componentes do computador.</li>
-            <li><a href="gpu.html"><strong>Placa de Vídeo (GPU):</strong></a> Processa e renderiza gráficos, crucial para jogos e aplicações gráficas.</li>
-            <li><a href="psu.html"><strong>Fonte de Alimentação (PSU):</strong></a> Fornece energia para todos os componentes do computador.</li>
-            <li><a href="devices.html"><strong>Dispositivos de Entrada/Saída:</strong></a> Como teclado, mouse, monitor, impressora, e outros periféricos.</li>
+            <li>Abra a pasta de instalação do <strong>King Arthur's Gold</strong>.</li>
+            <li>Navegue até a pasta onde estão os scripts do jogo.</li>
+            <li>Encontre o arquivo específico que controla os scripts da classe cavaleiro, geralmente nomeado algo como <code>knight.as</code>.</li>
+            <li>Anote o endereço completo da pasta e o nome do arquivo.</li>
         </ul>
 
-        <h2 id="tipos">3. Tipos de Computadores</h2>
-        <p>Os computadores vêm em diversas formas e tamanhos, adaptados para diferentes necessidades e usos:</p>
+        <h2 id="mod-modificacoes">3. Fazer Modificações</h2>
+        <p>Agora que sabemos onde estão os arquivos, vamos começar a fazer as modificações necessárias:</p>
         <ul>
-            <li><strong>Computadores de Mesa (Desktops):</strong> Usados em escritórios e residências, oferecem alta performance e capacidade de expansão.</li>
-            <li><strong>Computadores Portáteis (Laptops):</strong> Móveis e convenientes, ideais para trabalho em movimento.</li>
-            <li><strong>Tablets:</strong> Dispositivos portáteis com telas sensíveis ao toque, populares para consumo de mídia e tarefas leves.</li>
-            <li><strong>Servidores:</strong> Computadores potentes que fornecem serviços e recursos a outros computadores em uma rede.</li>
-            <li><strong>Supercomputadores:</strong> Máquinas extremamente poderosas usadas para processamento de dados em larga escala e pesquisa científica.</li>
+            <li>Crie uma nova pasta para o mod, nomeie-a como <code>Knight+</code>.</li>
+            <li>Copie o arquivo <code>knight.as</code> para a pasta do mod, mantendo o mesmo nome e estrutura de diretório.</li>
+            <li>Abra o arquivo copiado e estude a lógica do script.</li>
+            <li>Procure pela variável que controla o tempo entre os ataques do cavaleiro e faça as modificações desejadas para ajustá-la.</li>
+            <li>Salve as alterações no arquivo.</li>
         </ul>
 
-        <h2 id="funcoes">4. Funções de um Computador</h2>
-        <p>Os computadores executam uma ampla gama de funções essenciais:</p>
+        <h2 id="mod-testar">4. Testar o Mod</h2>
+        <p>Com as modificações feitas, é hora de testar o nosso mod:</p>
         <ul>
-            <li><strong>Processamento de Dados:</strong> Executam cálculos e operações complexas rapidamente.</li>
-            <li><strong>Armazenamento de Dados:</strong> Guardam grandes quantidades de informação de forma organizada.</li>
-            <li><strong>Comunicação:</strong> Permitem a troca de informações entre diferentes dispositivos e redes.</li>
-            <li><strong>Automação:</strong> Realizam tarefas repetitivas sem intervenção humana constante.</li>
+            <li>Volte à pasta raiz do jogo.</li>
+            <li>Encontre o arquivo <code>mods.cfg</code>.</li>
+            <li>Adicione o nome da pasta do mod <code>Knight+</code> na primeira linha deste arquivo.</li>
+            <li>Execute o jogo usando o arquivo <code>runlocalhost</code> para iniciar com o mod carregado.</li>
+            <li>Teste o jogo e observe as mudanças no comportamento do cavaleiro.</li>
         </ul>
-
-        <h2 id="historia">5. História dos Computadores</h2>
-        <p>A história dos computadores é marcada por inovações tecnológicas significativas, desde os primeiros dispositivos mecânicos até os modernos sistemas digitais:</p>
-        <ul>
-            <li><strong>Primeiros Computadores:</strong> Máquinas como o Ábaco e a Máquina de Diferencial de Babbage.</li>
-            <li><strong>Era dos Computadores Mainframe:</strong> Grandes sistemas usados por empresas e instituições.</li>
-            <li><strong>Computadores Pessoais (PCs):</strong> A revolução dos anos 80 que trouxe os computadores para uso doméstico.</li>
-            <li><strong>Era da Internet:</strong> O advento da conectividade global que transformou os computadores em portais de comunicação e informação.</li>
-            <li><strong>Computação Móvel e Nuvem:</strong> A popularização dos dispositivos móveis e dos serviços de armazenamento e processamento baseados na nuvem.</li>
-        </ul>
-
-        <h2 id="impacto">6. Impacto dos Computadores na Sociedade</h2>
-        <p>Os computadores têm um impacto profundo na sociedade moderna, transformando como trabalhamos, comunicamos, aprendemos e nos entretémos. Eles são fundamentais para a inovação tecnológica, a automação industrial, a pesquisa científica, a educação e a cultura digital.</p>
-
-        <h2 id="futuro">7. Futuro dos Computadores</h2>
-        <p>O futuro dos computadores inclui avanços em áreas como computação quântica, inteligência artificial, e dispositivos vestíveis. Espera-se que os computadores continuem a se tornar mais poderosos, eficientes e integrados em todos os aspectos da vida cotidiana.</p>
 
         <a href="index.html">← Voltar para a página principal</a>
     </div>
