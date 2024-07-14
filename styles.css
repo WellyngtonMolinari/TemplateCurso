@@ -6,7 +6,7 @@ body {
     line-height: 1.6;
     background-color: #f5f5f5;
     color: #333;
-    display: flex;
+    display: row;
     flex-direction: column;
     min-height: 100vh;
 }
