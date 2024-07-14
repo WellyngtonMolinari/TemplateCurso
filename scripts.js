@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const sidebar = document.getElementById('sidebar');
     const container = document.getElementById('main-content');
     const hideSidebarBtn = document.getElementById('hide-sidebar');
+    const darkModeToggle = document.getElementById('dark-mode-toggle');
 
     toggleBtn.addEventListener('click', function() {
         sidebar.classList.toggle('active');
@@ -68,5 +69,21 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Atualizar links da sidebar ao rolar a página
     window.addEventListener('scroll', updateSidebarLinks);
-});
 
+    // Alternar entre modos claro e escuro
+    darkModeToggle.addEventListener('click', function() {
+        document.body.classList.toggle('dark-mode');
+
+        // Salvar a preferência do usuário no localStorage
+        if (document.body.classList.contains('dark-mode')) {
+            localStorage.setItem('dark-mode', 'enabled');
+        } else {
+            localStorage.removeItem('dark-mode');
+        }
+    });
+
+    // Verificar a preferência do usuário ao carregar a página
+    if (localStorage.getItem('dark-mode') === 'enabled') {
+        document.body.classList.add('dark-mode');
+    }
+});
