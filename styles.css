@@ -217,8 +217,7 @@ a:hover {
     border-radius: 5px;
     z-index: 1100;
     transition: background 0.3s;
-    position: relative; /* Posicionamento absoluto para controle preciso */
-    left: -20px; /* Movendo o botão para dentro da sidebar */
+    position: relative;  
 }
 
 .hide-sidebar-btn:hover {
