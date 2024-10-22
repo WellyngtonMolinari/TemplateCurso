@@ -3,96 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Curso de [Nome do Curso]</title>
+    <title>Título do Curso</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="imagens/faviconcourse.jpeg" type="image/x-icon">
+    <link rel="icon" href="imagens/favicon.png" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
+    <link rel="manifest" href="manifest.json">
+    <script src="translate.js"></script>
 </head>
 <body>
     <!-- Botão para alternar entre modos claro e escuro -->
     <button class="dark-mode-toggle" id="dark-mode-toggle">🌙</button>
 
+    <button id="install-button" style="display: none;">Install App!</button>
     <!-- Botão de Toggle para a Sidebar -->
     <button class="toggle-btn" id="toggle-sidebar">☰ Menu</button>
     
     <!-- Sidebar -->
     <div class="sidebar" id="sidebar">
         <h3>
-            Navegação do Curso
+            Navegação
             <button class="hide-sidebar-btn" id="hide-sidebar">&lt;</button>
         </h3>
         <nav>
-            <a href="#module1">Módulo 1: [Nome do Módulo]</a>
-            <a href="#module2">Módulo 2: [Nome do Módulo]</a>
-            <a href="#module3">Módulo 3: [Nome do Módulo]</a>
-            <a href="#module4">Módulo 4: [Nome do Módulo]</a>
+            <!-- Links de navegação a serem preenchidos -->
         </nav>
-        <h3>Páginas Relacionadas</h3>
-        <a href="extras.html">Extras</a>
-        <a href="extras2.html">Extras2</a>
     </div>
 
     <!-- Conteúdo Principal -->
     <div class="container" id="main-content">
-        <h1>[Nome do Curso]</h1>
+        <h1>Título Principal</h1>
 
         <!-- Espaço para a imagem -->
         <div class="image-container">
-            <img src="imagens/curso-imagem.jpg" alt="Imagem do Curso">
+            <img src="imagens/default.jpg" alt="Imagem">
         </div>
+        <hr>
 
-        <!-- Módulo 1 -->
-        <section>
-            <h2 id="module1">Módulo 1: [Nome do Módulo]</h2>
-            <p>[Descrição do módulo e conteúdo principal]</p>
+        <!-- Seções e módulos -->
+        <section id="module1">
+            <div class="progress-container">
+                <div class="progress-bar" id="progress-bar1"></div>
+                <div class="progress-text" id="progress-text1">0% concluído</div>
+            </div>
+            <h2><strong>Módulo 1: Exemplo</strong></h2>
+            <p>Descrição do módulo 1.</p>
             <ul>
-                <li>[Tópico 1] Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur odit eum voluptate? Eius consequuntur, provident quam iure pariatur quisquam ex saepe, alias, consectetur maiores molestiae ut deleniti odio aut illo.</li>
-                <li>[Tópico 2]</li>
-                <li>[Tópico 3]</li>
+                <li><a href="modulo1/exemplo.html"><strong>Exemplo de Link</strong></a></li>
+                <!-- Mais itens aqui -->
             </ul>
         </section>
+        <hr>
 
-        <!-- Módulo 2 -->
-        <section>
-            <h2 id="module2">Módulo 2: [Nome do Módulo]</h2>
-            <p>[Descrição do módulo e conteúdo principal]</p>
-            <ul>
-                <li>[Tópico 1] Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam impedit, voluptas reiciendis iusto ipsum unde, est corrupti corporis laboriosam molestiae et ipsa, magni sint quae modi quas omnis consequatur fuga.</li>
-                <li>[Tópico 2]</li>
-                <li>[Tópico 3]</li>
-            </ul>
-        </section>
-
-        <!-- Módulo 3 -->
-        <section>
-            <h2 id="module3">Módulo 3: [Nome do Módulo]</h2>
-            <p>[Descrição do módulo e conteúdo principal]</p>
-            <ul>
-                <li>[Tópico 1] Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates temporibus, quis quod laboriosam aliquid consequuntur libero facere sequi ipsam excepturi numquam? Impedit enim debitis eveniet vero deleniti eaque exercitationem aut.</li>
-                <li>[Tópico 2]</li>
-                <li>[Tópico 3]</li>
-            </ul>
-        </section>
-
-        <!-- Módulo 4 -->
-        <section>
-            <h2 id="module4f">Módulo 4: [Nome do Módulo]</h2>
-            <p>[Descrição do módulo e conteúdo principal]</p>
-            <ul>
-                <li>[Tópico 1] Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil, magni rem nostrum ullam, officiis, nam culpa dolore aliquam aperiam aspernatur in autem numquam maxime ipsam nemo sit minus eum fuga.</li>
-                <li>[Tópico 2]</li>
-                <li>[Tópico 3]</li>
-            </ul>
-        </section>
-
-        <!-- Link de Retorno -->
-        <a href="index.html">← Voltar para a página principal</a>
+        <!-- Outros módulos seguem o mesmo padrão -->
         
     </div>
 
     <footer>
-        <p>&copy; [Ano Atual] [Nome da Instituição ou do Curso]. Todos os direitos reservados.</p>
+        <p>&copy; 2024 Seu Nome. Todos os direitos reservados.</p>
     </footer>
 
     <script src="scripts.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+          if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js').then(registration => {
+              console.log('ServiceWorker registration successful with scope: ', registration.scope);
+            }, err => {
+              console.log('ServiceWorker registration failed: ', err);
+            });
+          }
+
+          let deferredPrompt;
+
+          window.addEventListener('beforeinstallprompt', (e) => {
+            console.log('beforeinstallprompt event fired');
+            e.preventDefault();
+            deferredPrompt = e;
+            const installButton = document.querySelector('#install-button');
+            if (installButton) {
+              installButton.style.display = 'block';
+              installButton.addEventListener('click', (e) => {
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then((choiceResult) => {
+                  if (choiceResult.outcome === 'accepted') {
+                    console.log('User accepted the install prompt');
+                  } else {
+                    console.log('User dismissed the install prompt');
+                  }
+                  deferredPrompt = null;
+                });
+              });
+            }
+          });
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            function initializeModule(moduleId, progressBarId, progressTextId, storageKey) {
+                const moduleSection = document.getElementById(moduleId);
+                const moduleLinks = moduleSection.querySelectorAll("a");
+                const progressBar = document.getElementById(progressBarId);
+                const progressText = document.getElementById(progressTextId);
+
+                let clickedLinks = new Set(JSON.parse(localStorage.getItem(storageKey) || '[]'));
+
+                moduleLinks.forEach(link => {
+                    link.addEventListener("click", function(event) {
+                        event.preventDefault();  
+                        clickedLinks.add(link.href);
+                        localStorage.setItem(storageKey, JSON.stringify(Array.from(clickedLinks)));
+                        updateProgress();
+                        window.location.href = link.href;  
+                    });
+                });
+
+                function updateProgress() {
+                    const totalLinks = moduleLinks.length;
+                    const clickedLinksCount = clickedLinks.size;
+                    const completionRate = (totalLinks > 0) ? (clickedLinksCount / totalLinks) * 100 : 0;
+
+                    progressBar.style.width = `${completionRate}%`;
+                    progressText.textContent = `${completionRate.toFixed(0)}% concluído`;
+                }
+
+                updateProgress();
+            }
+
+            initializeModule('module1', 'progress-bar1', 'progress-text1', 'clickedLinks-module1');
+        });
+    </script>
 </body>
 </html>

@@ -24,22 +24,19 @@ footer {
     transition: background-color 0.3s, color 0.3s; /* Adiciona transição suave para mudanças */
 }
 
-/* Modo Escuro */
-body.dark-mode footer {
-    background-color: #232323;
-    color: #e0e0e0;
-}
-
+/* Modo Escuro Geral */
 body.dark-mode {
     background-color: #121212;
     color: #e0e0e0;
 }
 
+/* Container */
 body.dark-mode .container {
     background-color: #1e1e1e;
     color: #e0e0e0;
 }
 
+/* Sidebar */
 body.dark-mode .sidebar {
     background-color: #232323;
     color: #e0e0e0;
@@ -60,7 +57,10 @@ body.dark-mode .sidebar a.active {
     color: #fff;
 }
 
-body.dark-mode .toggle-btn, body.dark-mode .hide-sidebar-btn, body.dark-mode .dark-mode-toggle {
+/* Botões */
+body.dark-mode .toggle-btn, 
+body.dark-mode .hide-sidebar-btn, 
+body.dark-mode .dark-mode-toggle {
     background-color: #8d27ac;
     color: #e0e0e0;
 }
@@ -68,6 +68,71 @@ body.dark-mode .toggle-btn, body.dark-mode .hide-sidebar-btn, body.dark-mode .da
 body.dark-mode .dark-mode-toggle {
     background-color: #8d27ac;
     color: white;
+}
+
+/* Footer */
+body.dark-mode footer {
+    background-color: #232323;
+    color: #e0e0e0;
+}
+
+/* Seções de Módulos no Modo Escuro */
+body.dark-mode section[id^="module"] {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
+    max-width: 800px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.dark-mode section[id^="module"]:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 15px rgba(255, 255, 255, 0.2);
+}
+
+body.dark-mode section[id^="module"] h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #8d27ac; /* Título em roxo */
+}
+
+body.dark-mode section[id^="module"] p {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+/* Melhorando a Organização dos Tópicos */
+body.dark-mode section[id^="module"] ul {
+    text-align: left;
+    padding-left: 20px;
+    list-style-type: disc;
+}
+
+body.dark-mode section[id^="module"] li {
+    font-size: 16px;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+body.dark-mode section[id^="module"] li strong {
+    color: #8d27ac; /* Destaque em roxo */
+}
+
+/* Links */
+body.dark-mode a {
+    color: #8d27ac;
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.3s ease;
+}
+
+body.dark-mode a:hover {
+    border-bottom: 2px solid #8d27ac;
 }
 
 /* Cabeçalhos */
@@ -78,7 +143,7 @@ h1 {
 }
 
 h2, h3 {
-    color: #2980b9;
+    color: #2c3e50;
     margin-top: 20px;
 }
 
@@ -102,6 +167,144 @@ ul ul {
     list-style-type: disc;
 }
 
+/* Estilo para as Sessões de Módulo */
+section[id^="module"] {
+    background-color: #f0f8ff; /* Azul muito claro para o fundo */
+    color: #2c3e50; /* Azul escuro para o texto */
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section[id^="module"]:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+section[id^="module"] h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #1f78d1; /* Azul mais vibrante para o título */
+}
+
+section[id^="module"] p {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: #34495e; /* Tom de azul-acinzentado suave */
+}
+
+/* Melhorando a Organização dos Tópicos */
+section[id^="module"] ul {
+    text-align: left;
+    padding-left: 20px;
+    list-style-type: disc;
+}
+
+section[id^="module"] li {
+    font-size: 16px;
+    margin-bottom: 10px;
+    line-height: 1.5;
+    color: #5d6d7e; /* Tom de azul-acinzentado leve */
+}
+
+section[id^="module"] li strong {
+    color: #27ae60; /* Destaque em azul suave */
+}
+
+/* Links */
+section[id^="module"] a {
+    color: #27ae60; /* Verde suave para os links (original) */
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.3s ease, color 0.3s ease;
+}
+
+section[id^="module"] a:hover {
+    border-bottom: 2px solid #33a6ff; /* Azul mais claro no hover */
+    color: #33a6ff; /* Azul durante o hover */
+}
+
+/* Estilo para a Porcentagem Concluída - Light Mode */
+span[id^="progress-module"] {
+    background-color: #27ae60; /* Fundo verde para a barra de progresso */
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 14px;
+    display: inline-block;
+    margin-left: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Efeito ao Passar o Mouse - Light Mode */
+span[id^="progress-module"]:hover {
+    background-color: #2ecc71; /* Verde mais claro no hover */
+    color: #f0f0f0;
+}
+
+/* Estilo para a Porcentagem Concluída - Dark Mode */
+body.dark-mode span[id^="progress-module"] {
+    background-color: #27ae60; /* Fundo verde no dark mode */
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 14px;
+    display: inline-block;
+    margin-left: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Efeito ao Passar o Mouse - Dark Mode */
+body.dark-mode span[id^="progress-module"]:hover {
+    background-color: #2ecc71; /* Verde mais claro no hover no dark mode */
+    color: #f0f0f0;
+}
+
+/* Barra de Progresso de Conteúdo */
+.progress-container {
+    background-color: #e0e0e0; /* Cor de fundo da barra de progresso */
+    border-radius: 25px;
+    position: relative;
+    height: 20px;
+    width: 100%;
+    margin: 20px 0;
+    overflow: hidden;
+}
+
+.progress-bar {
+    background-color: #27ae60; /* Cor verde para o progresso */
+    height: 100%;
+    width: 0; /* Largura inicial é 0, será preenchida pelo JS */
+    border-radius: 25px;
+    transition: width 0.3s ease; /* Suave transição de preenchimento */
+}
+
+.progress-text {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+    top: 50%;
+    transform: translateY(-50%);
+    font-weight: bold;
+}
+
+/* Dark Mode */
+body.dark-mode .progress-container {
+    background-color: #4d4d4d; /* Fundo da barra mais escuro no modo escuro */
+}
+
+body.dark-mode .progress-bar {
+    background-color: #2ecc71; /* Verde mais claro no dark mode */
+}
 /* Estilo de Contêiner Principal */
 .container {
     flex: 1;
@@ -132,9 +335,9 @@ a:hover {
 }
 
 .image-container img {
-    max-width: 100%;
+    max-width: 50%;
     height: auto;
-    border-radius: 8px;
+    border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
@@ -243,41 +446,46 @@ a:hover {
     background-color: #216f94;
 }
 
-/* Responsividade */
+ /* Responsividade para dispositivos móveis */
 @media (max-width: 1000px) {
+    /* Ajustes gerais */
     .container {
-        margin-left: 20px; /* Ajuste dinâmico da margem esquerda */
-        max-width: calc(100% - 40px); /* Reduz a largura máxima considerando margens */
-        padding-left: 20px;
-        padding-right: 20px;
+        margin-left: 0;
+        max-width: 100%;
+        padding: 15px;
     }
 
+    /* Esconder a sidebar por padrão */
     .sidebar {
-        width: 250px; /* Largura original da sidebar */
+        transform: translateX(-100%);
+        width: 250px;
+        opacity: 1; /* Deixar a sidebar um pouco transparente */
+        position: fixed;
+        z-index: 1000;
+        background-color: rgba(248, 249, 250, 0.9); /* Cor com transparência */
     }
 
+    /* Mostrar o botão "Menu" */
     .toggle-btn {
-        z-index: 1200; /* Aumenta o z-index para que o botão fique acima da sidebar */
-    }
-}
-
-@media (max-width: 600px) {
-    body {
-        flex-direction: column;
+        display: block;
     }
 
-    ul {
-        padding-left: 15px;
+    /* Ajuste do botão de esconder sidebar */
+    .hide-sidebar-btn {
+        position: fixed;
+        top: 20px;
+        right: 20px;
     }
 
-    ul ul {
-        padding-left: 15px;
-        margin-left: 10px;
+    /* Quando a sidebar está visível */
+    .sidebar.visible {
+        transform: translateX(0);
     }
 
-    .container {
-        margin-top: 10px;
-        padding: 10px;
+    /* Container quando a sidebar está oculta */
+    .container.full-width {
+        margin-left: 0;
+        max-width: 100%;
     }
 }
 
@@ -289,4 +497,41 @@ a:hover {
 .container.full-width {
     margin-left: 0;
     max-width: 100%;
+}
+
+hr {
+    border: none;
+    height: 2px; /* Ajuste a altura conforme necessário */
+    background: linear-gradient(to right, #2534fd, #4ecdff); /* Gradiente de cores */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Sombra */
+    margin: 40px 0; /* Espaçamento superior e inferior */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Animação de transição */
+hr::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.5);
+    animation: slide 1.5s infinite;
+}
+
+/* Definindo a animação */
+@keyframes slide {
+    from {
+        left: -100%;
+    }
+    to {
+        left: 100%;
+    }
+}
+
+/* Esmaecimento */
+.visited {
+    opacity: 0.6;
 }
